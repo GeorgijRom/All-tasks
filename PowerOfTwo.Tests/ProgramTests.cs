@@ -12,7 +12,7 @@ namespace PowerOfTwo.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void CheckPowerOfTwoTest_32_expected_true()
+        public void CheckPowerOfTwoTest_expected_true()
         {
             int x = 32;
             bool expected = true;
@@ -22,12 +22,32 @@ namespace PowerOfTwo.Tests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod()]
-        public void CheckPowerOfTwoTest_20_expected_false()
+        public void CheckPowerOfTwoTest_expected_false()
         {
             int x = 20;
             bool expected = false;
 
             bool actual = PowerOfTwo.CheckPowerOfTwo(x);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void CheckPowerOfTwoTestRecursive_expected_true()
+        {
+            int x = 32;
+            bool expected = true;
+
+            bool actual = PowerOfTwo.CheckPowerOfTwoRecursive(x);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void CheckPowerOfTwoTestRecursive_expected_false()
+        {
+            int x = 20;
+            bool expected = false;
+
+            bool actual = PowerOfTwo.CheckPowerOfTwoRecursive(x);
 
             Assert.AreEqual(expected, actual);
         }

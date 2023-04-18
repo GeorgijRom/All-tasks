@@ -26,5 +26,14 @@ namespace PowerOfTwo
         {
             return n != 0 && (n & (n - 1)) == 0;
         }
+
+        public static bool CheckPowerOfTwoRecursive(int n)
+        {
+            if (n == 1)
+                return true;
+            if (n == 0 | n % 2 == 1 | n < 0)
+                return false;
+            else return CheckPowerOfTwoRecursive(n / 2);
+        }
     }
 }
