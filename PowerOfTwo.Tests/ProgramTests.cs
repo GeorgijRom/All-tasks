@@ -12,10 +12,20 @@ namespace PowerOfTwo.Tests
     public class ProgramTests
     {
         [TestMethod()]
-        public void CheckPowerOfTwoTest()
+        public void CheckPowerOfTwoTest_32_expected_true()
         {
             int x = 32;
             bool expected = true;
+
+            bool actual = PowerOfTwo.CheckPowerOfTwo(x);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void CheckPowerOfTwoTest_20_expected_false()
+        {
+            int x = 20;
+            bool expected = false;
 
             bool actual = PowerOfTwo.CheckPowerOfTwo(x);
 
