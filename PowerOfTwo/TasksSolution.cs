@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PowerOfTwo
+namespace Tasks
 {
-    public class PowerOfTwo
+    public class TasksSolution
     {
         static void Main(string[] args)
         {
@@ -35,5 +36,17 @@ namespace PowerOfTwo
                 return false;
             else return CheckPowerOfTwoRecursive(n / 2);
         }
+        public static string StringTurnOver(string s)
+        {
+            StringBuilder str = new StringBuilder(s);
+            for (int i = 0; i < str.Length / 2; i++) 
+            {
+                char a = str[str.Length - i - 1];
+                str[str.Length - i - 1] = str[i];
+                str[i] = a;
+            }
+            return str.ToString();
+        }
     }
+
 }

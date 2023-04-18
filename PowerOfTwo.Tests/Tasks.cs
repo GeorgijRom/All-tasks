@@ -1,15 +1,15 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PowerOfTwo;
+using Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PowerOfTwo.Tests
+namespace Tasks.Test
 {
     [TestClass()]
-    public class ProgramTests
+    public class Tasks
     {
         [TestMethod()]
         public void CheckPowerOfTwoTest_expected_true()
@@ -17,7 +17,7 @@ namespace PowerOfTwo.Tests
             int x = 32;
             bool expected = true;
 
-            bool actual = PowerOfTwo.CheckPowerOfTwo(x);
+            bool actual = TasksSolution.CheckPowerOfTwo(x);
 
             Assert.AreEqual(expected, actual);
         }
@@ -27,7 +27,7 @@ namespace PowerOfTwo.Tests
             int x = 20;
             bool expected = false;
 
-            bool actual = PowerOfTwo.CheckPowerOfTwo(x);
+            bool actual = TasksSolution.CheckPowerOfTwo(x);
 
             Assert.AreEqual(expected, actual);
         }
@@ -37,7 +37,7 @@ namespace PowerOfTwo.Tests
             int x = 32;
             bool expected = true;
 
-            bool actual = PowerOfTwo.CheckPowerOfTwoRecursive(x);
+            bool actual = TasksSolution.CheckPowerOfTwoRecursive(x);
 
             Assert.AreEqual(expected, actual);
         }
@@ -47,9 +47,30 @@ namespace PowerOfTwo.Tests
             int x = 20;
             bool expected = false;
 
-            bool actual = PowerOfTwo.CheckPowerOfTwoRecursive(x);
+            bool actual = TasksSolution.CheckPowerOfTwoRecursive(x);
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void StringTurnOverTest_expected_tone()
+        {
+            string str = "enot";
+            string expected = "tone";
+
+            string actual = TasksSolution.StringTurnOver(str);
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void StringTurnOverTest_expected_ikitone()
+        {
+            string str = "enotiki";
+            string expected = "ikitone";
+
+            string actual = TasksSolution.StringTurnOver(str);
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
