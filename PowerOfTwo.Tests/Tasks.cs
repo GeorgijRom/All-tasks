@@ -71,6 +71,16 @@ namespace Tasks.Test
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod()]
+        public void FindPairTest_expected_One()
+        {
+            int[] array = new[] { 1, 2, 4, 5, 1, 3, 7 };
+            int expected = 1;
+
+            int actual = TasksSolution.FindPair(array);
+
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
